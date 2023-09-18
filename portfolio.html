@@ -48,8 +48,8 @@
             <img src="asset/image/company-logo.png" class="img-thumbnail" alt="...">
           </div>
           <div class="col-md-3 mt-1">
-            <p class="fs-3 fw-bold">Gesit Nur Pratama</p>
-            <p class="fs-4">Backend Developer</p>
+            <p class="fs-3 fw-bold" id="label-nama">Gesit Nur Pratama</p>
+            <p class="fs-4" id="label-role">Backend Developer</p>
             <button type="button" class="btn btn-primary">Kontak</button>
             <button type="button" class="btn btn-secondary">Resume</button>
           </div>
@@ -57,23 +57,23 @@
             <table class="table table-borderless">
               <tr>
                 <td class="fw-bold">Availability</td>
-                <td>Full Time</td>
+                <td id="label-availability">Full Time</td>
               </tr>
               <tr>
                 <td class="fw-bold">Usia</td>
-                <td>21</td>
+                <td id="label-usia">21</td>
               </tr>
               <tr>
                 <td class="fw-bold">Lokasi</td>
-                <td>Cimahi, Jawa Barat</td>
+                <td id="label-lokasi">Cimahi, Jawa Barat</td>
               </tr>
               <tr>
                 <td class="fw-bold">Pengalaman</td>
-                <td>2</td>
+                <td id="label-pengalaman">2</td>
               </tr>
               <tr>
                 <td class="fw-bold">Email</td>
-                <td>gesitnurpatama80@gmail.com</td>
+                <td id="label-email">gesitnurpatama80@gmail.com</td>
               </tr>
             </table>
           </div>
@@ -81,44 +81,73 @@
       </div>
     </div>
     <div class="card m-4">
-      <div class="card-body">
+      <form class="card-body" action="#">
         <div class="mb-3">
           <label for="nama" class="form-label">Nama</label>
-          <input type="nama" class="form-control" id="nama">
+          <input type="text" id="field-nama" class="form-control">
         </div>
         <div class="mb-3">
           <label for="role" class="form-label">Role</label>
-          <input type="role" class="form-control" id="role">
+          <input type="text" id="field-role" class="form-control">
         </div>
         <div class="mb-3">
           <label for="availability" class="form-label">Availability</label>
-          <input type="availability" class="form-control" id="availability">
+          <select class="form-control" id="field-availability">
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
+          </select>
         </div>
         <div class="mb-3">
-          <label for="age" class="form-label">Age</label>
-          <input type="age" class="form-control" id="age">
+          <label for="usia" class="form-label">Usia</label>
+          <input type="number" id="field-usia" class="form-control">
         </div>
         <div class="mb-3">
           <label for="lokasi" class="form-label">Lokasi</label>
-          <input type="lokasi" class="form-control" id="lokasi">
+          <input type="text" id="field-lokasi" class="form-control">
         </div>
         <div class="mb-3">
-          <label for="years_experience" class="form-label">Years Experience</label>
-          <input type="years_experience" class="form-control" id="years_experience">
+          <label for="pengalaman" class="form-label">Years Experience</label>
+          <input type="number" id="field-pengalaman" class="form-control">
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email">
+          <input type="email" id="field-email" class="form-control">
         </div>
         <div class="d-grid gap-2">
-          <button class="btn btn-success" type="button">SUBMIT</button>
+          <button class="btn btn-success btn-submit" type="submit">SUBMIT</button>
         </div>
-      </div>
+      </form>
     </div>
     <footer class="text-center text-lg-start text-muted custom-footer">
       <div class="text-center p-4 bg-footer text-white">
         &copy; Copyright  by Gesit Nur Pratama
       </div>
     </footer>
+    <script type="text/javascript">
+      const button = document.querySelector(".btn-submit");
+
+      button.addEventListener("click", (event) => {
+        var field_nama = document.getElementById('field-nama').value;
+        var field_role = document.getElementById('field-role').value;
+        var field_availability = document.getElementById('field-availability').value;
+        var field_usia = document.getElementById('field-usia').value;
+        var field_lokasi = document.getElementById('field-lokasi').value;
+        var field_pengalaman = document.getElementById('field-pengalaman').value;
+        var field_email = document.getElementById('field-email').value;
+
+        if (field_nama == "" || field_role == "" || field_availability == "" ||
+          field_usia == "" || field_lokasi == "" || field_pengalaman == "" || field_email == "") {
+          alert("Harap isi semua field")
+        }else{
+          document.getElementById("label-nama").innerHTML = field_nama;
+          document.getElementById("label-role").innerHTML = field_role;
+          document.getElementById("label-availability").innerHTML = field_availability;
+          document.getElementById("label-usia").innerHTML = field_usia;
+          document.getElementById("label-lokasi").innerHTML = field_lokasi;
+          document.getElementById("label-pengalaman").innerHTML = field_pengalaman;
+          document.getElementById("label-email").innerHTML = field_email;
+        }
+      });
+    </script>
   </body>
 </html>
