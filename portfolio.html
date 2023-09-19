@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            <a class="navbar-brand text-white" href="#">Gesit App</a>
+          </div>
+          <div class="d-flex" role="search">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">My Inventory</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="card m-4">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="asset/image/company-logo.png" class="img-thumbnail" alt="...">
+          </div>
+          <div class="col-md-3 mt-1">
+            <p class="fs-3 fw-bold" id="label-nama">Gesit Nur Pratama</p>
+            <p class="fs-4" id="label-role">Backend Developer</p>
+            <button type="button" class="btn btn-primary">Kontak</button>
+            <button type="button" class="btn btn-secondary">Resume</button>
+          </div>
+          <div class="col-md-4 mt-1">
+            <table class="table table-borderless">
+              <tr>
+                <td class="fw-bold">Availability</td>
+                <td id="label-availability">Full Time</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Usia</td>
+                <td id="label-usia">21</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Lokasi</td>
+                <td id="label-lokasi">Cimahi, Jawa Barat</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Pengalaman</td>
+                <td id="label-pengalaman">2</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Email</td>
+                <td id="label-email">gesitnurpatama80@gmail.com</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card m-4">
+      <form class="card-body" action="#">
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" id="field-nama" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <input type="text" id="field-role" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="availability" class="form-label">Availability</label>
+          <select class="form-control" id="field-availability">
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part Time</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="usia" class="form-label">Usia</label>
+          <input type="number" id="field-usia" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="lokasi" class="form-label">Lokasi</label>
+          <input type="text" id="field-lokasi" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="pengalaman" class="form-label">Years Experience</label>
+          <input type="number" id="field-pengalaman" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="field-email" class="form-control">
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success btn-submit" type="submit">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+    <footer class="text-center text-lg-start text-muted custom-footer">
+      <div class="text-center p-4 bg-footer text-white">
+        &copy; Copyright  by Gesit Nur Pratama
+      </div>
+    </footer>
+    <script type="text/javascript">
+      const button = document.querySelector(".btn-submit");
+
+      button.addEventListener("click", (event) => {
+        var field_nama = document.getElementById('field-nama').value;
+        var field_role = document.getElementById('field-role').value;
+        var field_availability = document.getElementById('field-availability').value;
+        var field_usia = document.getElementById('field-usia').value;
+        var field_lokasi = document.getElementById('field-lokasi').value;
+        var field_pengalaman = document.getElementById('field-pengalaman').value;
+        var field_email = document.getElementById('field-email').value;
+
+        if (field_nama == "" || field_role == "" || field_availability == "" ||
+          field_usia == "" || field_lokasi == "" || field_pengalaman == "" || field_email == "") {
+          alert("Harap isi semua field")
+        }else{
+          document.getElementById("label-nama").innerHTML = field_nama;
+          document.getElementById("label-role").innerHTML = field_role;
+          document.getElementById("label-availability").innerHTML = field_availability;
+          document.getElementById("label-usia").innerHTML = field_usia;
+          document.getElementById("label-lokasi").innerHTML = field_lokasi;
+          document.getElementById("label-pengalaman").innerHTML = field_pengalaman;
+          document.getElementById("label-email").innerHTML = field_email;
+        }
+      });
+    </script>
+  </body>
+</html>
