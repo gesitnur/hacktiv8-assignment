@@ -1,4 +1,4 @@
-# Output Tampilan
+# Output Tampilan 
 # 1. Halaman index (Tampilan web)
 ![Optional Text](asset/output/output1.png)
 # 2. Halaman index (Tampilan mobile)
